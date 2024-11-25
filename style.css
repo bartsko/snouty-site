@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #ff9100, #000000);
+    color: #ffffff;
+    height: 100vh; /* Pełna wysokość */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ukrywamy pasek przewijania */
+}
+
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    max-width: 70%; /* Większy rozmiar grafiki */
+    height: auto;
+    animation: bounce 2s infinite; /* Subtelna animacja dla grafiki */
+}
+
+h1 {
+    font-size: 4rem;
+    margin-top: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px #000;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* Animacja dymu */
+@keyframes smoke {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+.smoke {
+    width: 50px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    border-radius: 50%;
+    animation: smoke 4s infinite;
+    filter: blur(10px);
+    z-index: 1;
+}
+
+/* Animacja logo (opcjonalne) */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
